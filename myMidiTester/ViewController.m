@@ -53,7 +53,7 @@
     NSLog(@"%@", ourSource);
     self.ourToken = [dm connectInput:ourSource error:&error
         eventHandler:^(MIKMIDISourceEndpoint *ourSource, NSArray *commands) {
-        for (MIKMIDICommand *command in commands) {
+        for (MIKMIDIChannelVoiceCommand *command in commands) {
             [[myTextView textStorage] appendAttributedString:[[NSAttributedString alloc]
                                                               initWithString:[NSString stringWithFormat:@"\n%@: %@", [NSDate date], command]]];
             MIKMIDIDestinationEndpoint *KontaktDestination = [[dm virtualDestinations] objectAtIndex:2];
